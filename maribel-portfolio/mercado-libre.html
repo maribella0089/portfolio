@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercado Libre — Maribel Sosa</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Designing re-authentication and factor flows for Mercado Libre and Mercado Pago. A framework-first case study on security UX at LATAM scale — pixels omitted per confidentiality." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Maribel Sosa, home">
+        <span class="nav__brand-mark">M.S</span>
+        <span class="nav__brand-name">Maribel Sosa</span>
+      </a>
+      <nav class="nav__menu" aria-label="Primary">
+        <a href="index.html#work" class="nav__link" data-link>Work</a>
+        <a href="index.html#approach" class="nav__link" data-link>Approach</a>
+        <a href="index.html#about" class="nav__link" data-link>About</a>
+        <a href="index.html#contact" class="nav__link" data-link>Contact</a>
+      </nav>
+      <a href="index.html#contact" class="nav__cta" data-link>
+        <span class="status-dot" aria-hidden="true"></span>
+        Available
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="case-hero">
+      <div class="case-hero__inner">
+        <a href="index.html" class="case-back" data-link>
+          <span class="arrow">←</span>
+          <span>All work</span>
+        </a>
+
+        <div class="case-meta">
+          <div class="case-meta__item">
+            <span class="case-meta__label">Company</span>
+            <span class="case-meta__value">Mercado Libre</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label">Team</span>
+            <span class="case-meta__value">Security</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label">Role</span>
+            <span class="case-meta__value">Product Designer</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label">Year</span>
+            <span class="case-meta__value">Present</span>
+          </div>
+        </div>
+
+        <h1 class="case-title">
+          Trust, <em>without the friction.</em>
+        </h1>
+
+        <p class="case-lede">
+          Designing re-authentication and factor flows for Mercado Libre and Mercado Pago — where every second of friction saved has to survive security review, and every security decision has to survive a user's patience. <em>This case study documents the framework, not the pixels.</em>
+        </p>
+
+        <div class="case-cover case-cover--neutral">
+          <div class="media-img" style="background-image: url('assets/meli/meli-hero.jpg')" role="img" aria-label="Mercado Libre — project cover"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE HOOK -->
+    <section class="case-hook reveal">
+      <div class="case-hook__inner">
+        <span class="case-hook__kicker">§ The question that anchors the work</span>
+        <blockquote class="case-hook__quote">
+          How do we make it feel secure without generating more <em>friction?</em>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="case-section">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 01</span>
+          <span>Context</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">An ecosystem where <em>trust is the product.</em></h2>
+          <p class="case-p">
+            Mercado Libre is Latin America's largest commerce ecosystem, and Mercado Pago is its fintech arm — together, they move real money for hundreds of millions of users across the region. When someone opens the app to send money to family, pay rent, receive a salary, or check on a business, the security layer is the invisible thing that stands between their account and someone who shouldn't have it.
+          </p>
+          <p class="case-p">
+            I joined the security team as a <strong>Product Designer</strong>. My surfaces are <strong>Reauth</strong> — the flows that verify a user is still who they say they are — and the <strong>factor flows</strong> that resolve those verifications: SMS, biometric, code, and beyond. Web and mobile. Mercado Libre and Mercado Pago.
+          </p>
+
+          <div class="case-nda">
+            <span class="case-nda__label">A note on confidentiality</span>
+            <p class="case-nda__body">
+              Due to the sensitive nature of this work, no product surfaces, feature specifics, or shipped metrics appear in this case study. What follows is the framework — how I think about the problem — not the deliverables.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE -->
+    <section class="case-section case-section--alt">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 02</span>
+          <span>The challenge</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">A design problem that lives on a <em>fault line.</em></h2>
+          <p class="case-p">
+            Every security decision sits on a fault line between two costs. Add a step, and you protect users — but slow them down. Remove a step, and you speed them up — but you may expose them to a risk they never agreed to.
+          </p>
+          <p class="case-p">
+            Every design I ship in this space starts from a single question:
+          </p>
+
+          <blockquote class="case-pull">
+            "How do we make it feel secure without generating more friction?"
+          </blockquote>
+
+          <p class="case-p">
+            That question sounds simple. It isn't. It requires holding two counter-intuitive truths at once:
+          </p>
+          <ol class="case-list">
+            <li><strong>More UI does not equal more security.</strong> Sometimes it equals more abandonment — and users who abandon a security flow tend to circumvent it entirely.</li>
+            <li><strong>Zero friction is not the goal.</strong> The goal is trust — and a completely invisible security layer teaches users to trust nothing.</li>
+          </ol>
+          <p class="case-p">
+            The design lives in the narrow band between those two failures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLE -->
+    <section class="case-section">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 03</span>
+          <span>My role</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">Designing for the moment the system says <em>"prove it."</em></h2>
+          <p class="case-p">
+            As Product Designer on Reauth and factor flows, I contribute to the surfaces users interact with when the system needs to re-verify who they are — from the trigger, through the challenge, to completion and re-entry into whatever they were doing. This is a domain where multiple designers rotate through the work, so the design is collaborative by nature and the ownership is shared.
+          </p>
+          <p class="case-p">
+            The work spans <strong>Mercado Libre and Mercado Pago</strong>, and both platforms — <strong>web and mobile</strong>. But the real complexity isn't only in the interface. Every decision has to hold together across <strong>business goals, user needs, compliance requirements, and other measured concerns</strong> like fraud prevention and factor conversion. Alignment across those forces is the design problem as much as the pixels are.
+          </p>
+          <p class="case-p">
+            And the design never finishes in a single pass. What worked last quarter may shift with a new threat pattern, a policy change, or new user data — so we're <strong>constantly reviewing metrics</strong>, adjusting, and re-testing to keep the balance right between security and usability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="case-section case-section--alt">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 04</span>
+          <span>Approach</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">Two principles that hold the work together.</h2>
+          <p class="case-p">
+            Every decision in this space passes through two filters. They're simple to state and much harder to hold to under pressure.
+          </p>
+
+          <h3 class="case-h3">01 — Design in the user's mental model, not the technical one</h3>
+          <p class="case-p">
+            System architecture has its own vocabulary — tokens, sessions, factor strength, risk scoring, session propagation. The user has none of that. They know: <em>"I was doing something, and now the app is asking me something."</em> Every design decision I make starts from that framing. What does the user believe is happening? Only then do we translate the technical need into a step that fits their model.
+          </p>
+
+          <h3 class="case-h3">02 — Simplicity carries more security than complexity</h3>
+          <p class="case-p">
+            There's a temptation, in security work, to add: another warning, another confirmation, another explanation. The evidence points the other way. Users skim, dismiss, or abandon complex flows — which leaves them less protected than they were before. <strong>The strongest security surface is one users can actually complete.</strong> Simplicity isn't the enemy of security. It's often its most under-used tool.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNALS -->
+    <section class="case-section">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 05</span>
+          <span>Signals I measure</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">Two numbers tell me if the design is working.</h2>
+          <p class="case-p">
+            Security work is hard to instrument without either violating privacy or drowning in noise. But there are two signals that consistently tell me the truth about whether a flow is landing.
+          </p>
+
+          <div class="case-stats case-stats--abstract">
+            <div class="stat stat--accent">
+              <div class="stat__value">Factor conversion</div>
+              <div class="stat__label">Of the users who hit a challenge, how many complete it</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">Drop-off</div>
+              <div class="stat__label">Where in the flow users fall off — and at which factor</div>
+            </div>
+          </div>
+
+          <p class="case-p">
+            <strong>Factor conversion</strong> is the ceiling on how well the mechanic can do its job — because a factor that no one finishes is a factor that doesn't protect anyone. <strong>Drop-off</strong> is where the design speaks: every drop-off point is either a UX gap I can close or a friction pattern I need to re-evaluate.
+          </p>
+          <p class="case-p">
+            Both metrics are <em>surface-agnostic</em>. Whether the flow is SMS, biometric, or code, they tell me the same story about whether the design served the user's actual need — which is to get back to what they were trying to do.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="case-section case-section--alt">
+      <div class="case-section__inner case-grid reveal">
+        <div class="case-grid__label">
+          <span class="case-grid__label-num">§ 06</span>
+          <span>What this domain has taught me</span>
+        </div>
+        <div class="case-grid__content">
+          <h2 class="case-h2">Reflections from the security surface.</h2>
+
+          <h3 class="case-h3">The user is not the adversary</h3>
+          <p class="case-p">
+            In security work, it's easy to design as if every reduction in friction is a hole in the wall. But the actual adversary is the attacker — and the user completing the flow is the ally. Every point of friction the legitimate user faces is one they might route around, leaving them less safe than a small, well-designed step would have kept them.
+          </p>
+
+          <h3 class="case-h3">Security is a design surface, not a warning label</h3>
+          <p class="case-p">
+            The strongest security experience feels considered, not defensive. When the mechanic disappears into the flow of what the user was trying to do, they trust the system <em>more</em>, not less.
+          </p>
+
+          <h3 class="case-h3">You don't ship security — you ship access</h3>
+          <p class="case-p">
+            The metric that matters isn't <em>"was this flow secure enough?"</em> It's: did the user get back to what they were doing, and did we keep the wrong person out along the way? Both, together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT -->
+    <section class="case-next">
+      <div class="case-next__inner">
+        <span class="case-next__label">Next up</span>
+        <div>
+          <a href="stori.html" class="case-next__title" data-link>Stori Referrals →</a>
+        </div>
+        <div>
+          <a href="index.html#contact" class="case-next__cta" data-link>
+            <span>Or get in touch</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <span class="footer__label">© 2026 Maribel Sosa</span>
+        <span class="footer__sub">Designed & built in Mexico City.</span>
+      </div>
+      <div class="footer__col footer__col--right">
+        <span class="footer__label">Last updated</span>
+        <span class="footer__sub">May 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

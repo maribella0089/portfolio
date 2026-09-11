@@ -1,0 +1,20 @@
+# Development artifacts — never deployed to the live site
+preview-*.html
+build.py
+DEPLOY.md
+README.md
+CLAUDE_CODE.md
+
+# Orphan case study file (Stori Home was removed from portfolio)
+stori-home.html
+
+# OS / sandbox cruft
+.DS_Store
+**/.DS_Store
+assets/.writetest
+
+# Orphan assets replaced by newer versions (safe to remove locally too)
+assets/shein/landing-v1.png
+assets/shein/hero.png
+assets/shein/a.png
+assets/shein/image_1-1_2.png
