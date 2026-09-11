@@ -86,20 +86,20 @@ ul { list-style: none; }
   mix-blend-mode: difference;
 }
 .cursor {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   background: #fff;
   transform: translate(-50%, -50%);
 }
 .cursor-trail {
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   border: 1px solid #fff;
   transform: translate(-50%, -50%);
   opacity: 0.6;
 }
-.cursor.is-hover { width: 14px; height: 14px; }
-.cursor-trail.is-hover { width: 64px; height: 64px; opacity: 0.9; }
+.cursor.is-hover { width: 9px; height: 9px; }
+.cursor-trail.is-hover { width: 43px; height: 43px; opacity: 0.9; }
 .cursor.is-hidden, .cursor-trail.is-hidden { opacity: 0; }
 
 @media (hover: none), (max-width: 900px) {
