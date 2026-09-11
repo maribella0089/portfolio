@@ -127,4 +127,35 @@
       }
     }, { passive: true });
   }
+
+  // ----------------------------------------------------------
+  // Subtle parallax on project covers + case study hero covers
+  // ----------------------------------------------------------
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const parallaxTargets = document.querySelectorAll('.project__visual-frame .media-img, .case-cover .media-img');
+
+  if (parallaxTargets.length && !prefersReducedMotion) {
+    const PARALLAX_RANGE = 14; // total % of background travel — kept subtle
+
+    const updateParallax = () => {
+      const vh = window.innerHeight;
+      parallaxTargets.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const clamped = Math.min(1, Math.max(0, progress));
+        const pos = 50 - PARALLAX_RANGE / 2 + clamped * PARALLAX_RANGE;
+        el.style.backgroundPositionY = `${pos}%`;
+      });
+    };
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { updateParallax(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateParallax);
+    updateParallax();
+  }
 })();
